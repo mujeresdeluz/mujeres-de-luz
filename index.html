@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Rituales de masaje con velas. Descubre el ritual que es para ti.">
+<meta name="description" content="Velitas de masaje con ritual. Descubre el ritual que es para ti.">
 <title>Mujeres de Luz</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Oldenburg&family=Caveat:wght@500&display=swap">
@@ -111,7 +111,7 @@ section.block { padding-block: 64px; border-top: 1px solid var(--line); }
 .sec-head p { color: var(--muted); }
 
 /* Rituales */
-.rituals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.rituals { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .ritual { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 30px 26px 26px; display: flex; flex-direction: column; align-items: stretch; gap: 14px; min-width: 0; }
 .ritual .orb { flex: none; }
 .ritual .price { margin-top: auto; padding-top: 6px; }
@@ -125,11 +125,39 @@ section.block { padding-block: 64px; border-top: 1px solid var(--line); }
 .ritual ol li::before { content: ""; position: absolute; left: 0; top: .72em; width: 6px; height: 6px; border-radius: 50%; background: var(--r); }
 .price { display: flex; align-items: baseline; gap: 10px; font-family: var(--font-display); }
 .price b { font-weight: 400; font-size: 34px; letter-spacing: .01em; font-variant-numeric: tabular-nums; }
+.price del { font-size: 20px; color: var(--muted); font-weight: 300; }
+.price .promo { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; background: var(--cobre); color: #fff; padding: 4px 10px; border-radius: 99px; align-self: center; }
+.price { flex-wrap: wrap; }
+.comm { background: var(--band); border-radius: 24px; padding: clamp(26px,5vw,52px); display: grid; gap: 18px; }
+.comm ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.comm li { padding-left: 22px; position: relative; font-size: 16.5px; }
+.comm li::before { content: "✦"; position: absolute; left: 0; color: var(--cobre); font-size: 13px; top: .35em; }
+.tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.tier { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px 18px; display: grid; gap: 6px; text-align: center; }
+.tier .n { font-family: var(--font-display); font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--cobre-ink); }
+.tier b { font-family: var(--font-display); font-weight: 400; font-size: 28px; }
+.tier small { font-size: 14px; color: var(--muted); }
+.tier.best { border-color: var(--cobre); }
+@media (max-width: 720px) { .tiers { grid-template-columns: repeat(2, 1fr); } }
 .price span { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .ritual .btn { width: 100%; }
 .r-soltar { --r: var(--lila); --on-r: var(--ic-dark); }
 .r-abundancia { --r: var(--cobre); --on-r: var(--ic-light); }
 .r-enraizar { --r: var(--rosa); --on-r: var(--ic-dark); }
+.r-yo2027 { --r: var(--cobre); --on-r: var(--ic-light); }
+.r-calma { --r: var(--rosa); --on-r: var(--ic-dark); }
+.ritual .aroma { font-family: var(--font-display); font-weight: 500; font-size: 14px; letter-spacing: .2em; text-transform: uppercase; color: var(--cobre-ink); }
+.ritual .aroma-txt { font-size: 15.5px; color: var(--muted); }
+.ritual .take-t { font-family: var(--font-display); font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; margin-top: 4px; }
+.ritual ul.take { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 15.5px; }
+.ritual ul.take li { padding-left: 16px; position: relative; }
+.ritual ul.take li::before { content: ""; position: absolute; left: 0; top: .72em; width: 6px; height: 6px; border-radius: 50%; background: var(--r); }
+.pay.c2 { grid-template-columns: repeat(2, 1fr); }
+.pay .tag { font-family: var(--font-display); font-size: 12px; letter-spacing: .26em; text-transform: uppercase; color: var(--cobre-ink); }
+.pay .tag + h3 { margin-bottom: 4px; }
+.note-soft { margin-top: 18px; font-size: 14px; color: var(--muted); max-width: 46em; }
+.res .inside-t { font-family: var(--font-display); font-weight: 300; font-size: 26px; margin: 30px 0 10px; }
+.res .take-t { font-family: var(--font-display); font-size: 12.5px; letter-spacing: .26em; text-transform: uppercase; color: var(--muted); margin: 6px 0 10px; }
 
 /* Caja y pasos */
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
@@ -255,7 +283,7 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; gap: 28px; padding-block: 36px 48px; }
   .hero-photo { max-width: 340px; justify-self: start; order: -1; }
-  .rituals, .pay, .two { grid-template-columns: 1fr; }
+  .rituals, .pay, .pay.c2, .two { grid-template-columns: 1fr; }
   .two { gap: 40px; }
   section.block { padding-block: 48px; }
   .dock { display: flex; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: var(--bg); border-top: 1px solid var(--line); padding: 10px max(16px, env(safe-area-inset-left, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)); }
@@ -276,19 +304,21 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
-
+</head>
+<body>
 <div id="app"></div>
 
 <script>
 (function () {
   /* ====== AJUSTES ====== */
   var WHATSAPP_NUMBER = "573168883415";
+  var COMMUNITY_URL = ""; // pega aquí el link del grupo de WhatsApp
   var PRICE = 63000;
-  var DEADLINE = "18 de diciembre";
+  var PRICE_REG = 83000;
   var INSTAGRAM = "@mujeresdeluz__";
   /* Enlaces de las meditaciones (Spotify o TikTok). Si está vacío, la página muestra "llega muy pronto". */
-  var MEDITATION_URL = { soltar: "", abundancia: "", enraizar: "" };
-  var SHOTS = { soltar: "p5.jpg", abundancia: "q-abund.jpg", enraizar: "p3.jpg" };
+  var MEDITATION_URL = { yo2027: "", calma: "" };
+  var SHOTS = { yo2027: "q-abund.jpg", calma: "p3.jpg" };
   var FRASES = {
     soltar: [
       "Respira. Ya hiciste suficiente por hoy.", "Lo que pesa no es tuyo para siempre.", "Suelta la prisa y quédate contigo.",
@@ -328,6 +358,11 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
     ]
   };
 
+  FRASES = {
+    calma: FRASES.soltar,
+    yo2027: FRASES.abundancia.slice(0, 15).concat(FRASES.enraizar.slice(0, 15))
+  };
+
   var money = function (n) { return "$" + n.toLocaleString("es-CO"); };
   var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
 
@@ -336,60 +371,82 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
     abundancia: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1 5 7 8 7 15a7 7 0 0 1-14 0c0-3 1.5-5 3-6.5.2 2 1 3 2.2 3.5C14 11 15 7 16 3z"/><path d="M16 27c-2 0-3.5-1.4-3.5-3.2 0-1.6 1.2-2.6 3.5-4.8 2.3 2.2 3.5 3.2 3.5 4.8 0 1.8-1.5 3.2-3.5 3.2z"/></svg>',
     enraizar: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V14"/><path d="M16 14c-5 0-8-3-8-8 5 0 8 3 8 8z"/><path d="M16 19c4 0 7-2.5 7-7-4.5 0-7 2.5-7 7z"/><path d="M9 29h14"/></svg>'
   };
+  ICONS.calma = ICONS.enraizar; ICONS.yo2027 = ICONS.abundancia;
+  function priceHtml() { return '<div class="price"><b>' + money(PRICE) + '</b><del>' + money(PRICE_REG) + '</del><span class="promo">Promoción</span><span>+ envío</span></div>'; }
   var STAR = '<svg viewBox="-20 -20 40 40" aria-hidden="true"><path d="M0-20C2-6 6-2 20 0 6 2 2 6 0 20-2 6-6 2-20 0-6-2-2-6 0-20z"/></svg>';
   var WA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.3 18.7L4 20z"/><path d="M9 9.5c.5 2.5 2.5 4.5 5.5 5.5l1.2-1.3-2-1-.9.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.9-1-2L9 9.5z"/></svg>';
 
   var RITUALS = {
-    soltar: {
-      key: "soltar", name: "Soltar", el: "Aire", emo: "Alivio",
-      hook: "Hoy tu cuerpo pide pausa.",
-      short: "Respiración profunda y pausa consciente para liberar tensión, despejar la mente y crear espacio.",
-      steps: [
-        "Enciende tu vela y respira hondo: inhala 4, sostén 4, exhala 6.",
-        "Escribe en un papelito lo que quieres soltar. Rómpelo.",
-        "Con la cera tibia, masajea cuello y hombros y huele despacio."
+    yo2027: {
+      key: "yo2027", name: "Cierra 2026, manifiesta tu yo 2027", el: "Fuego", emo: "Alegría, confianza y fuerza",
+      aroma: "Canela y pino",
+      hook: "Hoy encendemos tu 2027.",
+      short: "Cierra tu 2026 con gratitud y conéctate con la versión de ti que sueñas para 2027. Deja atrás lo que ya cumplió su ciclo, agradece todo lo vivido y enciende la llama de tus sueños del año que viene.",
+      aromaTxt: "La canela es un olor cálido que se asocia con la energía, el deseo, el movimiento y la abundancia. El pino trae bosque, frescura y renovación, y huele a diciembre.",
+      take: [
+        "Un ritual guiado para cerrar tu 2026 con agradecimiento.",
+        "Un espacio para conectar con tu versión 2027 y soñarla en detalle.",
+        "Masaje de manos con cera tibia y aroma de canela y pino.",
+        "Una meditación de 5 minutos para sellar tu intención.",
+        "Un aroma ancla: cada vez que enciendas tu velita durante el año, vuelves a ella."
       ],
-      ideas: ["Este diciembre suelto la prisa.", "Hoy me quedo conmigo.", "Respiro, suelto y sigo."],
-      ideasGift: ["Para que te regales una pausa.", "Respira, amiga. Hoy descansas.", "Que este diciembre pese menos."]
+      inside: [
+        "Enciende tu velita. Vamos a hacer el cierre de 2026. Tómate un momento para respirar y estar presente.",
+        "Haz un pequeño masaje con cera tibia en tus manos.",
+        "Carta al 2026: cuando te sientas preparada, escribe todo lo que quieres dejar atrás, soltar y agradecer de este año. Incluye todos los detalles.",
+        "Léela y quémala con cuidado, en un plato o recipiente seguro y lejos de cosas que se prendan.",
+        "Espera tu tiempo. Puedes demorarte días o dedicar una tarde. Los tiempos dependen de ti.",
+        "Carta a tu 2027: en cada área de tu vida (amistad, familia, salud, dinero, sueños, amor y comportamiento) escribe en presente y con agradecimiento lo que sueñas. Detalla lo más que puedas, sobre todo cómo te comportas en cada una y qué sueñas que va a pasar.",
+        "Léela las veces que quieras. Entre más la lees, más la interiorizas. Si quieres, haz varias versiones. Así enfocas tu mente para que trabaje por tus sueños todo el año.",
+        "Cierra los ojos y haz tu meditación de 5 minutos.",
+        "Termina con un masaje en las manos, que son la ventana de la creación, oliendo el aroma.",
+        "Cada vez que enciendas tu velita, date un espacio para ti, conecta con tu versión 2027 y recuerda darte siempre 5 minutos para volver."
+      ],
+      ideas: ["En 2027 me elijo primero.", "Gracias 2026, hola mi mejor versión.", "Enciendo la llama de mis sueños."],
+      ideasGift: ["Para la mujer que vas a ser en 2027.", "Que este nuevo año encienda tus sueños.", "Cierra con gratitud, empieza con fuerza."]
     },
-    abundancia: {
-      key: "abundancia", name: "Encender abundancia", el: "Fuego", emo: "Alegría y placer",
-      hook: "Hoy toca encenderte.",
-      short: "Masaje corporal con la cera tibia para despertar alegría, creatividad y placer, y volver a conectar con tu cuerpo.",
-      steps: [
-        "Enciende tu vela y espera a que la cera se derrita.",
-        "Prueba la temperatura en tu muñeca: tibia, nunca caliente.",
-        "Masajea manos y brazos y di en voz alta tres cosas por las que te sientes abundante."
+    calma: {
+      key: "calma", name: "Vuelvo a mí", el: "Tierra", emo: "Calma y presencia",
+      aroma: "Vainilla y coco",
+      hook: "Hoy vuelves a tu cuerpo.",
+      short: "Cinco minutos al día para volver a tu cuerpo, soltar lo que pesa y estar presente de nuevo. Pensado para los días de estrés, cuando la mente va más rápido que tú.",
+      aromaTxt: "La vainilla es suave, ternura y feminidad, y el coco la acompaña con dulzura. Juntas evocan paz, hogar y la sensación de estar cuidada y a salvo.",
+      take: [
+        "Cinco minutos al día para liberar tensiones y volver a tu cuerpo.",
+        "Herramientas de presencia plena para acompañar momentos de estrés, ansiedad y bucles de pensamientos.",
+        "Un masaje de manos con cera tibia, con aroma y textura que ayudan a tu cuerpo a bajar el ritmo.",
+        "Con la práctica, aprendes a reconocer lo que sientes y a soltarlo más rápido, y poco a poco eres tú quien guía tus emociones.",
+        "Un cierre de día en calma, para dormirte con la mente más tranquila.",
+        "Un aroma ancla: cada vez que lo huelas, vuelves a ti."
       ],
-      ideas: ["Merezco todo lo bueno que viene.", "Hoy elijo el placer de vivir.", "Abundancia es sentirme en casa en mí."],
-      ideasGift: ["Que todo lo bueno te encuentre.", "Para que enciendas tu alegría.", "Te mereces un momento solo para ti."]
-    },
-    enraizar: {
-      key: "enraizar", name: "Enraizar mi yo de 2027", el: "Tierra", emo: "Estabilidad y presencia",
-      hook: "Hoy plantas a quien quieres ser.",
-      short: "Fuerza interior y presencia para crear la versión de ti que viene, con intención y contacto.",
-      steps: [
-        "Enciende tu vela con los pies descalzos sobre el suelo.",
-        "Masajea pies y tobillos con la cera tibia, sintiéndote firme.",
-        "Escribe una carta corta a tu yo de 2027 y guárdala para abrirla en diciembre."
+      inside: [
+        "Busca un lugar en calma y enciende tu velita. Vamos a cerrar el ciclo del estrés.",
+        "Si hay un pendiente o una preocupación en tu mente, escríbelo en un papel y déjalo aparte.",
+        "Concéntrate en el olor de tu velita.",
+        "Haz un masaje corto con la cera tibia y 4 respiraciones profundas. En cada exhalación repite en tu mente: \"estoy a salvo\".",
+        "Por 20 segundos concéntrate solo en el masaje de tus manos: la fuerza que aplicas, el olor, la textura. Si quieres, cierra los ojos y masajea tus manos y tus yemas mientras respiras. En cada exhalación: \"estoy a salvo\".",
+        "Por 5 minutos estás tú sola. Cada vez que venga un pensamiento, reemplázalo diciendo \"estoy a salvo\".",
+        "Haz la meditación de 5 minutos que encuentras con tu velita.",
+        "Durante el día, recuérdale a tu mente que está a salvo y repite: \"suelto y confío\"."
       ],
-      ideas: ["En 2027 me elijo primero.", "Raíces firmes, camino claro.", "Me estoy convirtiendo en mi mejor versión."],
-      ideasGift: ["Para la mujer que vas a ser en 2027.", "Que este año plantes tu mejor versión.", "Tu luz ya tiene raíces. Cuídala."]
+      ideas: ["Estoy a salvo.", "Suelto y confío.", "Vuelvo a mí."],
+      ideasGift: ["Para que vuelvas a ti cuando lo necesites.", "Estás a salvo. Respira.", "Un abrazo en forma de olor."]
     }
   };
-  var ORDER = ["soltar", "abundancia", "enraizar"];
+  var ORDER = ["yo2027", "calma"];
 
   var QUESTIONS = [
-    { t: "¿Cómo llegas hoy?", s: "Sin pensarlo mucho, ¿cuál te suena más?", o: [["Saturada y cansada", "soltar"], ["Apagada, sin ganas", "abundancia"], ["Dispersa, sin rumbo", "enraizar"]] },
-    { t: "¿Qué quieres soltar?", s: "Eso que ya no necesitas cargar.", o: [["Tensión y prisa", "soltar"], ["Rutina y desánimo", "abundancia"], ["Dudas e inseguridad", "enraizar"]] },
-    { t: "¿Qué quieres atraer?", s: "Lo que quieres que llegue a tu vida.", o: [["Calma y descanso", "soltar"], ["Alegría y abundancia", "abundancia"], ["Claridad y estabilidad", "enraizar"]] },
-    { t: "¿Para quién es?", s: "Así preparamos tu tarjeta.", o: [["Para mí", "mi"], ["Para compartir con una amiga", "compartir"], ["Para regalar", "regalo"]], mode: true },
-    { t: "¿Qué necesitas esta noche?", s: "La última, lo prometo.", o: [["Silencio y pausa", "soltar"], ["Placer y celebrar", "abundancia"], ["Sentirme anclada", "enraizar"]] }
+    { t: "¿Qué estás buscando hoy?", s: "Sin pensarlo mucho, ¿cuál te suena más?", o: [["Liberar el estrés o la ansiedad", "calma"], ["Manifestar mi mejor versión", "yo2027"], ["Salir de un bucle de pensamientos negativos", "calma"], ["Cerrar el 2026 y empezar un 2027 soñado", "yo2027"]] },
+    { t: "Después de un día largo, ¿qué necesitas?", s: "Escucha lo primero que sientas.", o: [["Paz, que mi cuerpo por fin pare", "calma"], ["Sentarme a soñar cómo quiero que sea mi vida", "yo2027"], ["Salir de mi cabeza, los pensamientos no paran", "calma"], ["Sentir que voy hacia algo que me emociona", "yo2027"]] },
+    { t: "¿Qué te gustaría aprender?", s: "Nadie te está evaluando.", o: [["A tener más tranquilidad después de un largo día", "calma"], ["A manifestar mi mejor versión", "yo2027"], ["A calmarme cuando me llega la ansiedad", "calma"], ["A enfocar mi mente para trabajar por mis sueños", "yo2027"]] },
+    { t: "¿Para quién es?", s: "Así preparamos tu tarjeta.", o: [["Para mí", "mi"], ["Para hacer con mis amigas un cierre de año y un ritual para el 2027 soñado", "compartir"], ["Para regalar", "regalo"]], mode: true },
+    { t: "¿Cómo quieres sentirte al terminar?", s: "La última, lo prometo.", o: [["Tranquila, en mi cuerpo y a salvo", "calma"], ["Agradecida, fuerte y con ganas de empezar", "yo2027"]] }
   ];
 
   var st = { q: 0, answers: [], mode: "mi", ritual: null, name: "", to: "", msg: "" };
   var app = document.getElementById("app");
 
+  function communityHref() { return COMMUNITY_URL || waHref("Hola, Mujeres de Luz. Quiero pertenecer a la comunidad."); }
   function waHref(text) {
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
   }
@@ -408,61 +465,77 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
     var cards = ORDER.map(function (k) {
       var r = RITUALS[k];
       return '<article class="ritual r-' + k + '">' +
-        '<img class="shot" src="' + SHOTS[k] + '" alt="Vela MDL del ritual ' + r.name + '" loading="lazy">' +
+        '<img class="shot" src="' + SHOTS[k] + '" alt="Velita de masaje MDL del ritual ' + r.name + '" loading="lazy">' +
         '<div class="orb">' + ICONS[k] + '</div>' +
         '<div class="el">' + r.el + ' · ' + r.emo + '</div>' +
         '<h3>' + r.name + '</h3>' +
+        '<div class="aroma">Aroma · ' + r.aroma + '</div>' +
         '<p class="what">' + r.short + '</p>' +
-        '<ol>' + r.steps.map(function (s) { return '<li>' + s + '</li>'; }).join("") + '</ol>' +
-        '<div class="price"><b>' + money(PRICE) + '</b><span>+ envío</span></div>' +
+        '<p class="aroma-txt">' + r.aromaTxt + '</p>' +
+        '<div class="take-t">Lo que te llevas</div>' +
+        '<ul class="take">' + r.take.map(function (s) { return '<li>' + s + '</li>'; }).join("") + '</ul>' +
+        priceHtml() +
         '<button class="btn" data-pick="' + k + '">Quiero este ritual</button>' +
         '</article>';
     }).join("");
 
-    var generic = "Hola, Mujeres de Luz. Quiero pedir una vela de masaje con ritual. ¿Me ayudas a elegir?";
-    var art = '<svg viewBox="0 0 400 400" role="img" aria-label="Círculos de la marca Mujeres de Luz">' +
-      '<circle cx="165" cy="140" r="104" style="fill:var(--cobre)"/>' +
-      '<circle cx="232" cy="212" r="104" fill="none" stroke-width="11" style="stroke:var(--beige)"/>' +
-      '<circle cx="132" cy="212" r="56" style="fill:var(--rosa)"/>' +
-      '<circle cx="246" cy="276" r="70" style="fill:var(--orb)"/>' +
-      '<circle cx="336" cy="246" r="40" style="fill:var(--lila)"/>' +
-      '<g transform="translate(205 108)" style="fill:#fff"><path d="M0-22C2-7 7-2 22 0 7 2 2 7 0 22-2 7-7 2-22 0-7-2-2-7 0-22z"/></g>' +
-      '<g transform="translate(244 78) scale(.45)" style="fill:#fff"><path d="M0-22C2-7 7-2 22 0 7 2 2 7 0 22-2 7-7 2-22 0-7-2-2-7 0-22z"/></g>' +
-      '</svg>';
+    var generic = "Hola, Mujeres de Luz. Quiero pedir una velita de masaje con ritual. ¿Me ayudas a elegir?";
 
     var faq = [
-      ["¿La vela sirve para la piel?", "Sí. Es una vela de masaje: cuando se derrite, la cera se convierte en aceite tibio para tu piel. Tiene registro INVIMA. Antes de aplicarla, prueba la temperatura en tu muñeca: tibia, nunca caliente."],
-      ["¿Cuándo me llega?", "En Bogotá, tu pedido llega antes de 24 horas si pagas hoy. El último día para pedir y recibir antes de Navidad es el " + DEADLINE + "."],
+      ["¿Dónde están y cuánto demora en llegar?", "Estamos en Bogotá y en Bogotá te entregamos al día siguiente. Enviamos a todo el país y llega en 2 a 3 días hábiles. Puedes pedir cuando quieras."],
+      ["¿Cuánto cuesta?", "El precio normal de cada velita de ritual es $83.000, pero como estamos en promoción de temporada, vale $63.000 + envío."],
+      ["¿Cuánto cuesta el envío?", "Depende de tu ubicación. Al finalizar tu pedido por WhatsApp te decimos el valor de tu envío. Con 3 o 4 velitas, el envío es gratis."],
+      ["¿Hay descuento si llevo más de una?", "Sí. 1 velita: $63.000 + envío. 2 velitas: $112.000 + envío. 3 velitas: $145.000 con envío gratis. 4 velitas: $180.000 con envío gratis. Son ideales para regalar o para hacerlo con tus amigas."],
+      ["¿Qué trae la caja?", "Tu velita de masaje de soya con registro INVIMA, tu ritual, una meditación de 5 minutos con QR, una tarjeta personalizada, un mensaje del universo, una tarjeta de bienvenida y tu carta de fidelización."],
+      ["¿La velita sirve para la piel?", "Sí. Es una velita de masaje de soya con registro INVIMA: al derretirse, la cera se vuelve aceite tibio para tu piel. Antes de aplicarla, prueba la temperatura en tu muñeca: tibia, nunca caliente."],
+      ["¿Cuál ritual elijo si no sé?", "Haz el test: son 5 preguntas, toma 2 minutos y te decimos cuál ritual va más contigo. Si quieres soltar el estrés, Vuelvo a mí. Si quieres cerrar el año y soñar tu 2027, Cierra 2026, manifiesta tu yo 2027."],
       ["¿Cómo pago?", "Por Nequi o Bre-B, en el mismo chat de WhatsApp. Te mandamos los datos, pagas en segundos y listo."],
-      ["¿Puedo regalarla?", "Claro. En el test eliges \"para regalar\", escribes tu dedicatoria y la imprimimos en la tarjeta que va dentro de la caja."],
-      ["¿Qué es la Frase de Luz?", "Una frase sorpresa que llega dentro de tu caja. Cada vela trae una distinta, pensada para guardarla, fotografiarla o enviársela a alguien."]
+      ["¿Puedo regalarla?", "Claro. En el test eliges \"para regalar\", escribes tu dedicatoria y la imprimimos en la tarjeta personalizada que va dentro de la caja."],
+      ["¿Qué es la carta de fidelización?", "Es nuestra forma de agradecerte. En tu segunda compra tienes domicilio gratis. Y si una amiga llega referida por tu nombre, ella tiene domicilio gratis en su primera compra."],
+      ["¿Qué es el mensaje del universo?", "Un mensaje pensado para ti que llega dentro de tu caja. Es para guardarlo, fotografiarlo o enviárselo a alguien."]
     ].map(function (f) { return '<details><summary>' + f[0] + '</summary><p>' + f[1] + '</p></details>'; }).join("");
 
     app.innerHTML = previewBar() +
-      '<div class="promise"><b>Tu pedido llega antes de 24 h si pagas hoy</b> · Bogotá · Nequi o Bre-B</div>' +
+      '<div class="promise"><b>Promoción de temporada: $63.000 en vez de $83.000</b> · Bogotá: entrega al día siguiente · Enviamos a todo el país</div>' +
       header(false) +
       '<main class="wrap">' +
       '<section class="hero"><div>' +
-        '<div class="eyebrow">Vela de masaje · ritual de 10 minutos</div>' +
+        '<div class="eyebrow">Velas de masaje de soya · rituales para volver a ti</div>' +
         '<h1>Un diciembre <em>con pausa.</em></h1>' +
-        '<p class="lead">No es solo una vela, amiga. La enciendes, respiras y cuando la cera se derrite la usas como aceite de masaje. Cada caja trae su ritual, una tarjeta con tu mensaje, una meditación y una Frase de Luz sorpresa.</p>' +
+        '<p class="lead">No es solo una velita, amiga. Es una pausa guiada: la enciendes, respiras y, cuando la cera se derrite, la usas como aceite de masaje. Cada caja trae un ritual para cerrar tu año o para volver a ti cuando lo necesites.</p>' +
         '<div class="cta-row"><a class="btn" href="#test">Descubre tu ritual</a>' +
         '<a class="btn ghost" id="waHero" href="' + waHref(generic) + '" target="_blank" rel="noopener">' + WA + 'Pedir por WhatsApp</a></div>' +
-        '<p class="micro">5 preguntas · 2 minutos · gratis</p>' +
-      '</div><div class="hero-photo"><img src="v-soltar.jpg" alt="Vela de masaje Mujeres de Luz encendida"></div></section>' +
+        '<p class="micro">5 preguntas · 2 minutos · gratis · Velita de ritual en promoción: <b>$63.000</b> <del>$83.000</del></p>' +
+      '</div><div class="hero-photo"><img src="v-soltar.jpg" alt="Velita de masaje Mujeres de Luz encendida"></div></section>' +
 
-      '<section class="block" id="rituales"><div class="sec-head"><div class="eyebrow">Tres rituales</div><h2>Elige lo que necesitas hoy</h2>' +
-      '<p>Los tres llevan la misma vela de masaje. Cambia el ritual que la acompaña, y el precio es el mismo.</p></div>' +
+      '<section class="block" id="rituales"><div class="sec-head"><div class="eyebrow">Dos rituales</div><h2>Elige lo que necesitas hoy</h2>' +
+      '<p>Los dos llevan la misma velita de masaje de soya con INVIMA. Cambian el aroma, el elemento y el ritual que te acompaña. El precio es el mismo.</p></div>' +
       '<div class="rituals">' + cards + '</div></section>' +
+
+      '<section class="block"><div class="sec-head"><div class="eyebrow">Por qué lo hacemos así</div><h2>Un aroma, un masaje y una pausa</h2></div>' +
+      '<div class="pay">' +
+        '<div><h3>¿Por qué rituales?</h3><p>Hacemos rituales porque queremos acompañarte en tus momentos para conectar contigo, liberar el estrés y encontrar calma. No es solo una velita: es una pausa guiada, pensada de mujer a mujer.</p></div>' +
+        '<div><h3>¿Por qué una velita de masaje de soya?</h3><p>Los olores y las texturas ayudan a tu cuerpo a parar, a conectarse con el presente y a volver al cuerpo. Un aroma y un masaje no son solo herramientas que usamos en meditación para recordarle a la mente que debe parar: también ayudan a sacar al cuerpo de estados de estrés, agotamiento y cansancio.</p></div>' +
+        '<div><h3>No es solo una hidratante</h3><p>Con tu velita de soya, con registro INVIMA, vives una experiencia de masaje. Durante el año asociarás ese olor y ese momento contigo, para recordar y volver a ti.</p></div>' +
+      '</div></section>' +
+
+      '<section class="block"><div class="sec-head"><div class="eyebrow">Por qué estos aromas</div><h2>Cada aroma tiene su historia</h2></div>' +
+      '<div class="pay c2">' +
+        '<div><div class="tag">Fuego · Canela y pino</div><h3>Cierra 2026, manifiesta tu yo 2027</h3><p>La canela es un olor cálido que se asocia con la energía, el deseo y el movimiento, y está muy ligada a la abundancia. Es el elemento fuego: para encender la llama de los sueños de 2027 mientras dejas atrás y sueltas el 2026 con agradecimiento. Evoca alegría, confianza y fuerza. El pino aporta bosque, frescura y renovación.</p></div>' +
+        '<div><div class="tag">Tierra · Vainilla y coco</div><h3>Vuelvo a mí</h3><p>Un aroma pensado para hacerte sentir en hogar. La vainilla es suave, es ternura y feminidad, y evoca paz y la sensación de estar cuidada y a salvo. Es el elemento tierra, porque es raíz: te ayuda a volver al cuerpo, soltar lo que pesa y estar presente de nuevo.</p></div>' +
+      '</div>' +
+      '<p class="note-soft">Los significados de los aromas vienen de la tradición, la aromaterapia y los rituales: son simbólicos, no un tratamiento. Te acompañan en tu pausa.</p></section>' +
 
       '<section class="block"><div class="two"><div>' +
         '<div class="sec-head"><div class="eyebrow">Dentro de tu caja</div><h2>Todo lo que necesitas para tu momento</h2></div>' +
         '<ul class="checks">' +
-        item("Vela de masaje", "Cera apta para piel, con INVIMA. Se enciende, se derrite y se usa tibia.") +
-        item("Guía de tu ritual", "Tres pasos cortos para vivir tus 10 minutos sin pensar.") +
-        item("QR a tu meditación", "Escaneas y una meditación guiada te acompaña mientras dura la vela.") +
-        item("Tu mensaje en la tarjeta", "Tu intención o la dedicatoria para quien la recibe.") +
-        item("Frase de Luz sorpresa", "Una distinta en cada caja, hecha para guardarla.") +
+        item("Velita de masaje de soya", "Con registro INVIMA. Se enciende, se derrite y se usa tibia como aceite de masaje.") +
+        item("Tu ritual", "El paso a paso para vivir tu momento. Lo descubres al abrir tu caja.") +
+        item("Tu meditación", "Escaneas el QR y una meditación guiada te acompaña.") +
+        item("Tarjeta personalizada", "Escribe tu intención, para ti o para alguien más.") +
+        item("Mensaje del universo", "Uno pensado para ti, hecho para guardarlo.") +
+        item("Tarjeta de bienvenida", "Para que desde el primer momento te sientas en casa.") +
+        item("Carta de fidelización", "Tu segunda compra tiene domicilio gratis. Y si una amiga llega referida por tu nombre, su primera compra también.") +
         '</ul>' +
         '<div class="duo"><img src="q-cajas.jpg" alt="Cajas MDL con moño y QR" loading="lazy">' +
         '<video muted loop playsinline autoplay preload="metadata" poster="caja-poster.jpg" aria-label="Abriendo la caja MDL"><source src="caja.mp4" type="video/mp4"></video></div>' +
@@ -474,18 +547,31 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
         step(3, "Pide y paga por WhatsApp", "Te llega el pedido escrito. Pagas por Nequi o Bre-B.") +
         '</div></div></div></section>' +
 
+      '<section class="block"><div class="comm"><div class="eyebrow">Comunidad Mujeres de Luz</div><h2>No estás sola en esto</h2>' +
+      '<p>Tenemos una comunidad de mujeres a las que acompañamos todos los días. Si quieres hacer parte, entra al grupo de WhatsApp o escríbenos.</p>' +
+      '<ul><li>Te enviamos afirmaciones todos los días.</li><li>Meditaciones en vivo, gratis.</li><li>Herramientas para el manejo de la ansiedad y el estrés.</li><li>Espacios exclusivos con nuestras invitadas especiales.</li></ul>' +
+      '<div class="cta-row"><a class="btn" id="waComm" href="' + communityHref() + '" target="_blank" rel="noopener">' + WA + 'Quiero pertenecer a la comunidad</a></div></div></section>' +
+
+      '<section class="block"><div class="sec-head"><div class="eyebrow">Promoción</div><h2>Precio normal $83.000. Promoción de temporada desde $63.000</h2><p>Entre más llevas, menos pagas. Con 3 o más velitas, el envío es gratis.</p></div>' +
+      '<div class="tiers">' +
+        '<div class="tier"><span class="n">1 velita</span><b>$63.000</b><small>+ envío</small></div>' +
+        '<div class="tier"><span class="n">2 velitas</span><b>$112.000</b><small>+ envío</small></div>' +
+        '<div class="tier best"><span class="n">3 velitas</span><b>$145.000</b><small>envío gratis</small></div>' +
+        '<div class="tier best"><span class="n">4 velitas</span><b>$180.000</b><small>envío gratis</small></div>' +
+      '</div></section>' +
+
       '<section class="block"><div class="sec-head"><div class="eyebrow">Pago y entrega</div><h2>Fácil y sin vueltas</h2></div>' +
-      '<div class="pay"><div><h3>Nequi o Bre-B</h3><p>Pagas en segundos, en el mismo chat, sin enviar comprobante.</p></div>' +
-      '<div><h3>Antes de 24 horas</h3><p>Si pagas hoy, tu pedido llega antes de 24 horas en Bogotá.</p></div>' +
-      '<div><h3>Hasta el ' + DEADLINE + '</h3><p>Último día para pedir y recibir antes de Navidad.</p></div></div></section>' +
+      '<div class="pay"><div><h3>Nequi o Bre-B</h3><p>Pagas en segundos, en el mismo chat de WhatsApp.</p></div>' +
+      '<div><h3>Estamos en Bogotá</h3><p>Prometemos entrega al día siguiente en Bogotá. Enviamos a todo el país en 2 a 3 días hábiles.</p></div>' +
+      '<div><h3>Envío según tu ubicación</h3><p>El valor depende de dónde estés. Te lo decimos al finalizar tu pedido, por WhatsApp.</p></div></div></section>' +
 
       '<section class="block"><div class="sec-head"><div class="eyebrow">Mujeres de Luz</div><h2>Así se ve en tu casa</h2></div>' +
-      '<div class="gallery"><img src="q-sonrie.jpg" alt="Un momento de pausa con la vela MDL" loading="lazy"><img src="q-grupo.jpg" alt="Velas MDL listas para encender" loading="lazy"><img src="p6.jpg" alt="Velas MDL con tapa dorada" loading="lazy"></div></section>' +
+      '<div class="gallery"><img src="q-sonrie.jpg" alt="Un momento de pausa con la velita MDL" loading="lazy"><img src="q-grupo.jpg" alt="Velitas MDL listas para encender" loading="lazy"><img src="p6.jpg" alt="Velitas MDL con tapa dorada" loading="lazy"></div></section>' +
 
       '<section class="block"><div class="sec-head"><div class="eyebrow">Preguntas</div><h2>Lo que más nos preguntan</h2></div>' + faq + '</section>' +
 
-      '<section class="closing"><span class="mark"></span><h2>No regales una vela, regala un momento.</h2>' +
-      '<div class="cta-row" style="justify-content:center"><a class="btn" href="#test">Descubre tu ritual</a></div><div class="tag">brillamos con luz propia</div></section>' +
+      '<section class="closing"><span class="mark"></span><h2>No regales una velita, regala un momento.</h2>' +
+      '<div class="cta-row" style="justify-content:center"><a class="btn" href="#test">Descubre tu ritual</a><a class="btn ghost" href="' + communityHref() + '" target="_blank" rel="noopener">Quiero pertenecer a la comunidad</a></div><div class="tag">brillamos con luz propia</div></section>' +
       '</main>' +
       '<footer class="foot wrap">Mujeres de Luz · ' + INSTAGRAM + ' · WhatsApp +57 316 888 3415 · Bogotá, Colombia</footer>' +
       '<div class="dock"><a class="btn" href="#test">Descubre tu ritual</a><a class="btn ghost" id="waDock" href="' + waHref(generic) + '" target="_blank" rel="noopener">' + WA + 'WhatsApp</a></div>';
@@ -506,17 +592,15 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
 
   /* ====== TEST ====== */
   function computeRitual() {
-    var score = { soltar: 0, abundancia: 0, enraizar: 0 };
-    var q3 = null;
+    var score = { yo2027: 0, calma: 0 };
     QUESTIONS.forEach(function (q, i) {
       if (q.mode) return;
       var a = st.answers[i]; if (!a) return;
-      score[a]++; if (i === 2) q3 = a;
+      score[a]++;
     });
-    var max = Math.max(score.soltar, score.abundancia, score.enraizar);
-    var tied = ORDER.filter(function (k) { return score[k] === max; });
-    if (tied.length === 1) return tied[0];
-    return q3 && tied.indexOf(q3) > -1 ? q3 : tied[0];
+    if (score.yo2027 !== score.calma) return score.yo2027 > score.calma ? "yo2027" : "calma";
+    if (st.mode === "compartir") return "yo2027";
+    return st.answers[0] || "calma";
   }
 
   function testShell(inner) {
@@ -574,7 +658,10 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
       '<p class="hook">' + r.hook + '</p>' +
       '<p class="desc">' + r.short + '</p>' +
       '<div class="swap"><span>¿No es el tuyo?</span>' + swap + '</div>' +
-      '<ol class="ritual-steps">' + r.steps.map(function (s, i) { return '<li><i>' + (i + 1) + '</i><span>' + s + '</span></li>'; }).join("") + '</ol>' +
+      '<div class="eyebrow">Aroma · ' + r.aroma + '</div><p class="desc" style="margin-top:8px">' + r.aromaTxt + '</p>' +
+      '<div class="take-t">Lo que te llevas</div>' +
+      '<ol class="ritual-steps">' + r.take.map(function (s, i) { return '<li><i>' + (i + 1) + '</i><span>' + s + '</span></li>'; }).join("") + '</ol>' +
+      '<p class="sorpresa" style="margin:-14px 0 28px">Tu ritual paso a paso lo descubres al abrir tu caja.</p>' +
       '<div class="form">' +
         '<h2>Personaliza tu caja</h2>' +
         '<div class="field"><span class="lbl">¿Para quién es?</span><div class="seg" id="seg">' + seg + '</div></div>' +
@@ -585,10 +672,10 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
         '<div class="field"><span class="lbl">Así queda tu tarjeta</span>' +
         '<div class="card-prev" aria-live="polite"><div class="lab" id="card-lab"></div><div class="msg" id="card-msg"></div>' +
         '<div class="ft"><span>@MUJERESDELUZ__</span><span class="mark"></span></div></div>' +
-        '<p class="sorpresa">Tu Frase de Luz va aparte y es sorpresa: cada caja trae una distinta.</p></div>' +
-        '<div class="summary"><div class="price"><b>' + money(PRICE) + '</b><span>+ envío</span></div><span class="eyebrow">Vela de masaje + ritual</span></div>' +
+        '<p class="sorpresa">Tu mensaje del universo va aparte y es sorpresa: cada caja trae uno distinto.</p></div>' +
+        '<div class="summary">' + priceHtml() + '<span class="eyebrow">Velita de masaje + ritual</span></div>' +
         '<div class="final"><a class="btn" id="wa-order" href="#" target="_blank" rel="noopener">' + WA + 'Pedir por WhatsApp</a>' +
-        '<p class="note">Pagas por Nequi o Bre-B en el mismo chat. Si pagas hoy, tu pedido llega antes de 24 horas en Bogotá.</p></div>' +
+        '<p class="note">Pagas por Nequi o Bre-B en el mismo chat. En Bogotá, tu pedido llega al día siguiente.</p></div>' +
       '</div>' +
       '<div style="margin-top:22px;text-align:center"><button class="link" id="redo">Repetir el test</button></div>' +
       '</div>'
@@ -626,7 +713,7 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
       var lines = [
         "Hola, Mujeres de Luz. Quiero mi ritual:",
         "Ritual: " + r.name + " (" + r.el + ")",
-        "Vela de masaje: " + money(PRICE) + " + envío",
+        "Velita de masaje: " + money(PRICE) + " + envío (promoción, precio normal " + money(PRICE_REG) + ")",
         "Es: " + MODE_NAMES[st.mode].toLowerCase()
       ];
       if (st.mode !== "mi" && st.to.trim()) lines.push("Para: " + st.to.trim());
@@ -677,12 +764,13 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
       '<main class="test"><div class="res med r-' + k + '">' +
       '<div class="orb-lg">' + ICONS[k] + '</div>' +
       '<div class="eyebrow">Tu momento · ' + r.name + '</div>' +
-      '<h1>Tu Frase de Luz</h1>' +
+      '<h1>Tu mensaje del universo</h1>' +
       '<div class="frase" aria-live="polite"><div class="lab">' + STAR + 'Para ti, hoy</div><p id="frase-txt"></p>' +
       '<div class="ft"><span>@MUJERESDELUZ__</span><span class="mark"></span></div></div>' +
       '<div class="med-actions"><button class="btn ghost" id="otra">Otra frase</button>' + audio + '</div>' +
       '<p class="sorpresa" style="margin-top:14px">Toma una captura y súbela a tu historia etiquetando ' + INSTAGRAM + '. Nos encanta verte brillar.</p>' +
-      '<ol class="ritual-steps" style="margin-top:30px">' + r.steps.map(function (s, i) { return '<li><i>' + (i + 1) + '</i><span>' + s + '</span></li>'; }).join("") + '</ol>' +
+      '<div class="inside-t">Tu ritual</div>' +
+      '<ol class="ritual-steps">' + r.inside.map(function (s, i) { return '<li><i>' + (i + 1) + '</i><span>' + s + '</span></li>'; }).join("") + '</ol>' +
       '<div class="cta-row"><a class="btn" href="#test">Descubre tu ritual</a>' +
       '<a class="btn ghost" href="' + waHref("Hola, Mujeres de Luz. Abrí mi vela y quiero pedir otra.") + '" target="_blank" rel="noopener">' + WA + 'Escríbenos</a></div>' +
       '</div></main>';
@@ -704,3 +792,5 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 46em; }
   route();
 })();
 </script>
+</body>
+</html>
